@@ -73,13 +73,13 @@ df_value_counts = create_df_value_counts(df=df_mod)
 
 visual_col1, visual_col2= st.columns(2)
 with visual_col1:
-    if region_select=="general":
+    if region_select=="all Cantons":
         m = leafmap.Map(center=[46.449212, 7.734375], zoom=7)
         m.add_gdf(gdf, layer_name="Cantons", fill_colors=["red"])
         # m.add_gdf(gdf[gdf["NAME_1"].isin(regions)], layer_name="Canton analysed", fill_colors=["red"])
         m.to_streamlit()
     
-    if region_select!="general":
+    if region_select!="all Cantons":
         m = leafmap.Map(center=[46.449212, 7.734375], zoom=7)
         m.add_gdf(gdf[gdf["NAME_1"]!=region_select], layer_name="Cantons", fill_colors=["blue"])
         m.add_gdf(gdf[gdf["NAME_1"]==region_select], layer_name="Canton choosen for Analysis", fill_colors=["red"])
