@@ -45,7 +45,7 @@ text_col1, text_col2, text_col3  = st.columns(3)
 with text_col1:
     regions = df.region.unique().tolist()
     region_select = st.selectbox(
-        "Select a country of interest",
+        "Select a canton of interest",
         regions,
         )
 with text_col2:
