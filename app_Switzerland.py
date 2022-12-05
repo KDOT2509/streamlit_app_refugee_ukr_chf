@@ -34,7 +34,7 @@ def modify_df_for_table(df_mod, region_select, cluster_select, week_slider, metr
     # if metric_select!='':
     #     df_mod.sort_values(metric_select, ascending=False, inplace=True)
     df_mod.sort_values("reaction_count", ascending=False, inplace=True)
-    df_mod = df_mod[["chat", "messageText", "messageTextEnglish", "cluster_names", "messageDatetime", "week", "messageViews", "messageForwards", "reaction_count"]]
+    df_mod = df_mod[["chat", "reaction_count", "messageText", "messageTextEnglish", "cluster_names", "messageDatetime", "week", "messageViews", "messageForwards", ]]
     return df_mod
 
 df = load_telegram_data()
